@@ -1,0 +1,32 @@
+html {
+	font-size: 14px;
+}
+
+@media (min-width: 768px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: 60px;
+}
+
+.coverphoto {
+	width: 100px;
+	height: 150px;
+	/* object fit */
+	object-fit: cover;
+}
+
+.coverphoto-index {
+	width: 70px;
+	height: 120px;
+	/* object fit */
+	object-fit: cover;
+}
