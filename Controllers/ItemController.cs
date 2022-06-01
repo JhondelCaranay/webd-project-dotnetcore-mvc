@@ -19,7 +19,6 @@ public class ItemController : Controller
         _webHostEnvironment = webHostEnvironment;
     }
 
-
     public async Task<IActionResult> Index(bool isDeleted = false, bool isCreated = false, bool isUpdated = false)
     {
         var items = await _itemRepository.GetAllItems();

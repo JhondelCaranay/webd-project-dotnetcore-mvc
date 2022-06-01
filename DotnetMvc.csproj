@@ -14,5 +14,4 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SQLite" Version="6.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.5" />
   </ItemGroup>
-
 </Project>

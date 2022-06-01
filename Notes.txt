@@ -15,3 +15,46 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 
 dotnet ef migrations add InitialCreate
 dotnet ef database update
+
+
+
+########################################################
+
+Use the scaffolding tool to produce Create, Read, Update, and Delete (CRUD) pages for the movie model.
+    dotnet-aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMovieContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries -sqlite
+
+
+Initial migration
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-model?view=aspnetcore-6.0&tabs=visual-studio-code
+
+    dotnet tool install --global dotnet-ef
+
+    dotnet ef migrations add InitialCreate
+    dotnet ef database update
+
+
+How to automatically populate CreatedDate and ModifiedDate?
+    https://stackoverflow.com/questions/38183021/how-to-automatically-populate-createddate-and-modifieddate
+
+
+
+When Changes made in Model
+    dotnet build
+
+How can we delete a column from sql table by using code first approach in EF 6.0?
+    You shoul do 1-)Removing the column definition from model. 2-)Build your project 3-)add-migration 4-)update-database
+
+RESET DATABASE
+    Remove all files from the migrations folder.
+
+    Type in console
+
+        dotnet ef database drop -f -v
+        dotnet ef migrations add Initial
+        dotnet ef database update
+        
+    (Or for Package Manager Console)
+
+        Drop-Database -Force -Verbose
+        Add-Migration Initial
+        Update-Database

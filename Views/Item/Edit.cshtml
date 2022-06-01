@@ -1,12 +1,11 @@
 @model ItemVM;
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Item";
 }
 
-<h1>Edit</h1>
+<h1>@ViewData["Title"]</h1>
 
-<h4>Movie</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -55,7 +54,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to Item List</a>
 </div>
 
 @section Scripts {

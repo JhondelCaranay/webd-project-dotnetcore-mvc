@@ -1,10 +1,10 @@
 @model List<ItemVM>
 
-
-
 @{
-    ViewData["Title"] = "Create Item";
+    ViewData["Title"] = "List Item";
 }
+
+<h1>@ViewData["Title"] </h1>
 
 
 @if (ViewBag.isDeleted == true || ViewBag.IsCreated == true)
@@ -16,9 +16,8 @@
 }
 
 
-
 <p>
-    <a asp-action="Create">@ViewData["Title"]</a>
+    <a asp-action="Create">Create new Item</a>
 </p>
 
 <table class="table ">

@@ -1,0 +1,49 @@
+@model List<CategoryVM>
+
+@{
+    ViewData["Title"] = "Create Category";
+}
+
+@* ViewBag.isDeleted == true || *@
+@if (ViewBag.IsCreated == true)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>@ViewBag.message</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<p>
+    <a asp-action="Create">@ViewData["Title"]</a>
+</p>
+
+<table class="table ">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>
+                    @category.Id
+                </td>
+                <td>
+                    @category.Name
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@category.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@category.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
